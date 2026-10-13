@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# Employee dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React and Bootstrap learning app with a dashboard and an add-employee form. It combines sample users from JSONPlaceholder with employees created locally in the browser.
 
-## Available Scripts
+## Run and build
 
-In the project directory, you can run:
+```sh
+npm ci
+npm start
+```
 
-### `npm start`
+Open http://localhost:3000. Build static output with `npm run build`; output is in `build/`. There is no application backend or required environment configuration.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Pages and data flow
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- `/`: `src/components/Dashboard.js` fetches remote sample users and appends local records.
+- `/employee-form`: `EmployeeForm.js` collects name, designation, location, and salary, then returns to the dashboard.
+- `src/App.js` owns local state and reads/writes the `employees` localStorage key.
 
-### `npm test`
+The dashboard displays ID, name, and email. Local emails are generated from names; designation, location, and salary are not shown in the table. Browser storage is local to that browser and origin, with no account synchronization. The startup read and write effects can overwrite stored values during mounting; persistence across reloads needs explicit verification rather than assuming a database guarantee.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Checks and deployment
 
-### `npm run build`
+Manually check remote loading, a failed network request, adding an employee, and reload persistence. A test runner is configured by Create React App, but no application test files are tracked. `npm run eject` is an irreversible framework migration and is not part of normal setup.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Serve `build/` on a static host with all application routes falling back to `index.html`, so directly visiting `/employee-form` works. External sample-user loading requires network access.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## More documentation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Source, command, and configuration reference](docs/REFERENCE.md)
+- [Contributing](CONTRIBUTING.md)
