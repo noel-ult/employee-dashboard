@@ -1,7 +1,6 @@
 # employee-dashboard source reference
 
-
-Source reviewed: [`293065b641d3`](https://github.com/noel-ult/employee-dashboard/commit/293065b641d3536dc0bdae52ff0f667bfa6d01e6).
+Source reviewed: [`2bafd182df1b`](https://github.com/noel-ult/employee-dashboard/commit/2bafd182df1b1d8483982ab31a3c72be7b6358ff).
 
 This reference records the checked-in source, scripts, configuration names, and route declarations. It is a navigation aid; service availability and successful test execution require separate verification.
 
@@ -24,7 +23,9 @@ Manifest: [package.json](../package.json).
 
 Historical plans/reports describe their own revision; use current source when they disagree.
 
+- [CONTRIBUTING.md](../CONTRIBUTING.md)
 - [README.md](../README.md)
+- [docs/REFERENCE.md](../docs/REFERENCE.md)
 - [public/robots.txt](../public/robots.txt)
 
 ## Source and configuration map
